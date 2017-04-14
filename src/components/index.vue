@@ -4,17 +4,15 @@
       <img src="../assets/mainbg.png">
       <img id="askImg" :src="askImg[0]" alt="">
       <div class="btns">
-        <button id="reset">重来</button>
-        <button id="reminder">提示</button>
+        <button id="reset" @click="clear">重来</button>
+        <button id="reminder" @click="remind">提示</button>
       </div>
     </div>
-    <div>
-      
+    <div class="inputCover">
+      <input type="text" v-model="answer" placeholder="请输入答案">
     </div>
-    <ul>
-      <li></li>
-    </ul>
-    <button>提交</button>
+    
+    <button class="submit" @click="submit">提交</button>
   </div>
 </template>
 
@@ -22,7 +20,19 @@
 export default {
   data () {
     return {
-      askImg: ['src/assets/imgs/1.png','../assets/mainbg.png']
+      askImg: ['src/assets/imgs/1.png'],
+      answer:''
+    }
+  },
+  methods: {
+    clear() {
+      this.answer = '';
+    },
+    remind() {
+
+    },
+    submit() {
+
     }
   }
 }
@@ -59,6 +69,24 @@ export default {
         top:20px;
         left:30%;
       }
+    }
+    .inputCover {
+      width: 100%;
+      text-align: center;
+      margin-top: 50px;
+      input {
+        outline: none;
+        margin:0;
+        padding:3px 5px;
+      }
+    }
+    .submit {
+      display: block;
+      margin:30px auto;
+      padding: 6px 40px;
+      background-color: #f6d2aa;
+      text-align: center;
+      font-weight: bold;
     }
   }
 </style>
