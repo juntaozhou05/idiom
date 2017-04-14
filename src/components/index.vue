@@ -87,6 +87,7 @@ export default {
       background-color: #f6d2aa;
       text-align: center;
       font-weight: bold;
+      
     }
   }
 </style>
