@@ -33,7 +33,6 @@ export default {
   },
   mounted: function() {
     this.$http.get('data/data.json').then((res) => {
-      console.log(res.data.item);
       this.item = res.data.item;
       this.imgUrl = this.item[this.index].imgUrl;
       this.id = this.item[this.index].id;
@@ -51,7 +50,7 @@ export default {
     },
     submit() {
       if(this.answer == this.resAnswer) {
-        if(this.index == 10) {
+        if(this.index == 9) {
           alert('恭喜通关！您已经是状元了！');
           this.answer = '';
         }
@@ -120,6 +119,7 @@ export default {
         margin:0;
         padding:3px 5px;
         border: none;
+        text-align: center;
       }
     }
     .submit {
