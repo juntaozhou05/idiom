@@ -1,4 +1,68 @@
-
+{
+	"item":[
+		{
+			"id":"1",
+			"imgUrl":"src/assets/imgs/1.png",
+			"answer":"鱼贯而入",
+			"level": "文盲"
+		},
+		{
+			"id":"2",
+			"imgUrl":"src/assets/imgs/2.png",
+			"answer":"四通八达",
+			"level": "秀才"
+		},
+		{
+			"id":"3",
+			"imgUrl":"src/assets/imgs/3.png",
+			"answer":"网开一面",
+			"level": "秀才"
+		},
+		{
+			"id":"4",
+			"imgUrl":"src/assets/imgs/4.png",
+			"answer":"头重脚轻",
+			"level": "举人"
+		},
+		{
+			"id":"5",
+			"imgUrl":"src/assets/imgs/5.png",
+			"answer":"命悬一线",
+			"level": "举人"
+		},
+		{
+			"id":"6",
+			"imgUrl":"src/assets/imgs/6.png",
+			"answer":"鱼目混珠",
+			"level": "举人"
+		},
+		{
+			"id":"7",
+			"imgUrl":"src/assets/imgs/7.png",
+			"answer":"滴水穿石",
+			"level": "进士"
+		},
+		{
+			"id":"8",
+			"imgUrl":"src/assets/imgs/8.png",
+			"answer":"穷困潦倒",
+			"level": "进士"
+		},
+		{
+			"id":"9",
+			"imgUrl":"src/assets/imgs/9.png",
+			"answer":"胆大包天",
+			"level": "进士"
+		},
+		{
+			"id":"10",
+			"imgUrl":"src/assets/imgs/10.png",
+			"answer":"天外有天",
+			"level": "状元"
+		}
+	]
+	
+}
 
 
 

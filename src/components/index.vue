@@ -2,9 +2,10 @@
   <div class="index">
     <div class="top">
       <img src="../assets/mainbg.png">
-      <img id="askImg" :src="askImg[0]" alt="">
+      <img id="askImg" :src="imgUrl" alt="">
+      <div class="level">等级：<span class="levelText">{{level}}</span></div>
       <div class="btns">
-        <button id="reset" @click="clear">重来</button>
+        <button id="reset" @click="clear">清空</button>
         <button id="reminder" @click="remind">提示</button>
       </div>
     </div>
@@ -20,19 +21,47 @@
 export default {
   data () {
     return {
-      askImg: ['src/assets/imgs/1.png'],
-      answer:''
+      item:'',
+      imgUrl: '',
+      answer:'',
+      remindText:'',
+      id:'',
+      index:0,
+      resAnswer:'',
+      level:''
     }
+  },
+  mounted: function() {
+    this.$http.get('data/data.json').then((res) => {
+      console.log(res.data.item);
+      this.item = res.data.item;
+      this.imgUrl = this.item[this.index].imgUrl;
+      this.id = this.item[this.index].id;
+      this.resAnswer = this.item[this.index].answer;
+      this.level = this.item[this.index].level;
+      this.remindText = this.item[this.index].answer[0];
+    });
   },
   methods: {
     clear() {
       this.answer = '';
     },
     remind() {
-
+      this.answer = this.remindText;
     },
     submit() {
-
+      if(this.answer == this.resAnswer) {
+        this.index = this.index+1;
+        this.imgUrl = this.item[this.index].imgUrl;
+        this.id = this.item[this.index].id;
+        this.resAnswer = this.item[this.index].answer;
+        this.level = this.item[this.index].level;
+        this.remindText = this.item[this.index].answer[0];
+        this.answer = '';
+      }else {
+        alert('答案错误 请重新输入');
+        this.answer = '';
+      }
     }
   }
 }
@@ -41,19 +70,27 @@ export default {
 <style lang="less">
   .index{
     width: 100%;
+    margin-top: 20px;
     .top {
       width:90%;
       height:30%;
-      margin:10px auto;
-      position: relative;
+      margin:8px auto 5px;
       img {
-        width:100%;
+        width:60%;
+        margin:5px auto;
+        display: block;
+      }
+      .level {
+        width: 100%;
+        margin:10px auto;
+        text-align: center;
+        font-weight: bold;
+        .levelText {
+          color:red;
+        }
       }
       .btns {
-        position: absolute;
-        top:160px;
-        left: 10%;
-        width: 80%;
+        margin:20px auto;
         text-align: center;
         button {
           padding:5px 15px;
@@ -61,23 +98,24 @@ export default {
           background-color: rgb(213,192,151);
           text-align: center;
           color:white;
+          outline: none;
         }
       }
       #askImg {
-        width: 40%;
+        width: 30%;
         position: absolute;
         top:20px;
-        left:30%;
+        left:35%;
       }
     }
     .inputCover {
       width: 100%;
       text-align: center;
-      margin-top: 50px;
       input {
         outline: none;
         margin:0;
         padding:3px 5px;
+        border: none;
       }
     }
     .submit {
@@ -87,7 +125,7 @@ export default {
       background-color: #f6d2aa;
       text-align: center;
       font-weight: bold;
-      
+      outline: none;
     }
   }
 </style>
