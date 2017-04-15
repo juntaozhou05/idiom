@@ -51,6 +51,10 @@ export default {
     },
     submit() {
       if(this.answer == this.resAnswer) {
+        if(this.index == 10) {
+          alert('恭喜通关！您已经是状元了！');
+          this.answer = '';
+        }
         this.index = this.index+1;
         this.imgUrl = this.item[this.index].imgUrl;
         this.id = this.item[this.index].id;
