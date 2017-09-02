@@ -32,7 +32,7 @@ export default {
     }
   },
   mounted: function() {
-    this.$http.get('data/data.json').then((res) => {
+    this.$http.get('/data/data.json').then((res) => {
       this.item = res.data.item;
       this.imgUrl = this.item[this.index].imgUrl;
       this.id = this.item[this.index].id;

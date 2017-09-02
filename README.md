@@ -1,18 +1,19 @@
 # idiom
 
-> A Vue.js project
+> 一个看图猜成语的小游戏
 
 ## Build Setup
 
 ``` bash
-# install dependencies
+下载
+git clone https://github.com/juntaozhou05/idiom.git
+安装依赖
 npm install
-
-# serve with hot reload at localhost:8080
+运行开发模式
 npm run dev
-
-# build for production with minification
+运行生产模式
 npm run build
 ```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+![img](1.jpg)
+![img](2.jpg)
